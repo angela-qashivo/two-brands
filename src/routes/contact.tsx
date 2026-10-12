@@ -1,6 +1,5 @@
-import {createFileRoute,Link} from '@tanstack/react-router';
+import {createFileRoute} from '@tanstack/react-router';
 import {Site,PageHero,pageHead} from '@/components/site';
-import {Button} from '@/components/ui/button';
-import {ArrowRight} from 'lucide-react';
-export const Route=createFileRoute('/contact')({head:()=>pageHead('Contact Qashivo','Start a conversation about SME credit control or Qonfirm independent debt verification for Invoice Finance.'),component:Page});
-function Page(){return <Site><PageHero eyebrow="Contact" title="A conversation starts with the right question." copy="Talk about your outstanding invoices, or the debt underpinning your Invoice Finance facilities."/><section className="section"><div className="container"><h2>Qashivo & Qonfirm</h2><p className="section-copy">Nexus KPI Limited, trading as Qashivo.</p><p className="notice mt-5">Direct contact details will be added once confirmed. In the meantime, prepare your product enquiry.</p><Button asChild className="mt-7"><Link to="/demo">Prepare an enquiry <ArrowRight/></Link></Button></div></section></Site>}
+import {EnquiryForm} from '@/components/enquiry-form';
+export const Route=createFileRoute('/contact')({head:()=>pageHead('Contact Qashivo','Contact Qashivo about SME credit control, Qonfirm debt verification for Invoice Finance, or a general enquiry.'),component:Page});
+function Page(){return <Site><PageHero eyebrow="Contact" title="Let’s talk." copy="Ask about Qashivo credit control, Qonfirm verification, or book a demo."/><section className="section"><div className="container demo-layout"><div><h2>Send us an enquiry.</h2><p className="section-copy">Choose an enquiry type and tick “Book a demo” if you’d like to see the product.</p><p className="section-copy mt-5">Nexus KPI Limited, trading as Qashivo.</p></div><EnquiryForm/></div></section></Site>}
