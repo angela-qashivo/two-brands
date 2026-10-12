@@ -6,6 +6,7 @@ import qashivoLogo from '@/assets/qashivo-logo-light.png';
 import qonfirmLogo from '@/assets/qonfirm-logo-light.png';
 import people from '@/assets/finance-team.jpg';
 import { products, type Product } from '@/lib/products';
+import { OverviewVideo } from '@/components/overview-video';
 
 export const pageHead = (title:string, description:string) => ({meta:[{title:`${title} | Qashivo`},{name:'description',content:description},{property:'og:title',content:`${title} | Qashivo`},{property:'og:description',content:description},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary_large_image'}]});
 export function Site({children}:{children:React.ReactNode}) {
