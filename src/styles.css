@@ -64,3 +64,14 @@
 @media(max-width:1060px){.nav-links{display:none}.mobile-menu-button{display:inline-flex}.header-demo{margin-left:auto}.nav-links.is-open{position:absolute;display:flex;flex-direction:column;align-items:stretch;top:90px;left:0;right:0;padding:25px;background:var(--background);border-bottom:1px solid var(--border);gap:22px}.nav-links.is-open a{font-size:14px}.nav-divider{display:none}}
 @media(max-width:900px){.product-hero-grid{grid-template-columns:1fr;gap:36px}.product-hero h1{font-size:44px}.step-row,.resource-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.product-hero{padding:40px 0 50px}.product-hero h1{font-size:36px}.nav-links.is-open{top:72px}.step-row,.resource-grid{grid-template-columns:1fr}}
+.about-image{border-radius:8px;height:420px}
+.about-products{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:45px}
+.about-product{border:1px solid var(--border);border-top:2px solid var(--product);border-radius:6px;background:var(--card);padding:30px;display:flex;flex-direction:column;gap:16px}
+.about-product h3{font-size:22px;line-height:1.3}.about-product p{color:var(--muted-foreground);font-size:13px;line-height:1.8}
+.about-product ul{display:grid;gap:10px;font-size:13px;margin-bottom:8px}.about-product li{display:flex;gap:9px;align-items:center}.about-product li svg{width:14px;color:var(--product);flex-shrink:0}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:45px}
+.team-card{animation:fade-up .6s ease-out both}.team-card:nth-child(2){animation-delay:.1s}.team-card:nth-child(3){animation-delay:.2s}.team-card:nth-child(4){animation-delay:.3s}
+.team-photo{aspect-ratio:4/5;border-radius:8px;border:1px solid var(--border);background:linear-gradient(160deg,color-mix(in oklab,var(--primary) 14%,var(--card)),var(--card));display:grid;place-items:center;font-size:40px;font-weight:600;color:var(--primary);margin-bottom:18px}
+.team-card h3{font-size:18px}.team-card small{display:block;color:var(--primary);font-size:11px;letter-spacing:.5px;margin:6px 0 12px}.team-card p{color:var(--muted-foreground);font-size:12px;line-height:1.8}
+@media(max-width:900px){.team-grid{grid-template-columns:1fr 1fr}.about-products{grid-template-columns:1fr}.about-image{height:300px}}
+@media(max-width:480px){.team-grid{grid-template-columns:1fr}}
