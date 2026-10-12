@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router';
-import { ArrowRight, Play, Send, Target, AlertCircle, Eye, ShieldCheck, FileCheck, Radar, LayoutGrid } from 'lucide-react';
+import { ArrowRight, Send, Target, AlertCircle, Eye, ShieldCheck, FileCheck, Radar, LayoutGrid } from 'lucide-react';
+import { OverviewVideo } from '@/components/overview-video';
 import { Site, ProductLabel, ProductLogo, ProductLink, MiniDashboard, pageHead } from '@/components/site';
 import { Button } from '@/components/ui/button';
 import people from '@/assets/finance-team.jpg';
