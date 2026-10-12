@@ -1,24 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
-export const Route = createFileRoute("/")({
-  component: Index,
-});
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
+import { createFileRoute } from '@tanstack/react-router';
+import { Site, Eyebrow, Pathways, TrustStrip, Foundation, WorkflowSection, HumanSection, Channels, DashboardSection, Problems, Evidence, Choice, pageHead } from '@/components/site';
+import people from '@/assets/finance-team.jpg';
+export const Route = createFileRoute('/')({head:()=>pageHead('Smarter control over the money you’re owed','AI-powered credit control for SMEs. Independent debt verification for Invoice Finance. Find your Qashivo or Qonfirm pathway.'),component:Index});
+function Index(){return <Site><section className="hero"><img className="hero-background" src={people} alt="" width={1920} height={1024}/><div className="container hero-content"><Eyebrow>Intelligence for both sides of the invoice</Eyebrow><h1>Smarter control over<br/>the money <span>you’re owed.</span></h1><p className="hero-copy">From automated credit control for SMEs to independent debt verification for<br className="hidden md:block"/> Invoice Finance. Better visibility. Better evidence. Earlier control.</p><Pathways/><TrustStrip/></div></section><Foundation/><WorkflowSection product="qashivo"/><HumanSection/><Channels/><DashboardSection product="qashivo"/><section className="transition-band"><p>And when you’re funding the invoice rather than issuing it?</p><h2>Meet Qonfirm.</h2></section><WorkflowSection product="qonfirm"/><Problems/><Evidence/><DashboardSection product="qonfirm"/><Choice/><section className="section"><div className="container section-heading"><Eyebrow>Qashivo ecosystem</Eyebrow><h2>One technology ecosystem.<br/>Two clear applications.</h2><p className="section-copy">Qashivo · AI-powered credit control for SMEs.<br/>Qonfirm by Qashivo · Independent debt verification for Invoice Finance.</p></div></section></Site>}
