@@ -76,3 +76,16 @@
 .team-card h3{font-size:18px}.team-card small{display:block;color:var(--primary);font-size:11px;letter-spacing:.5px;margin:6px 0 12px}.team-card p{color:var(--muted-foreground);font-size:12px;line-height:1.8}
 @media(max-width:900px){.team-grid{grid-template-columns:1fr 1fr}.about-products{grid-template-columns:1fr}.about-image{height:300px}}
 @media(max-width:480px){.team-grid{grid-template-columns:1fr}}
+
+/* Privacy policy */
+.policy-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:56px;align-items:start}
+.policy-toc{position:sticky;top:110px;max-height:calc(100vh - 140px);overflow:auto;display:flex;flex-direction:column;gap:8px;font-size:.85rem;border-left:1px solid var(--border);padding-left:16px}
+.policy-toc strong{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-foreground);margin-bottom:6px}
+.policy-toc a{color:var(--muted-foreground);text-decoration:none}.policy-toc a:hover{color:var(--primary)}
+.policy{max-width:760px;line-height:1.75;color:var(--muted-foreground)}
+.policy h1{font-size:2rem;color:var(--foreground);margin:0 0 8px}
+.policy h2{font-size:1.4rem;color:var(--foreground);margin:52px 0 14px;scroll-margin-top:110px;padding-top:24px;border-top:1px solid var(--border)}
+.policy h3{font-size:1.05rem;color:var(--foreground);margin:28px 0 10px}
+.policy p{margin:0 0 14px}.policy ul{margin:0 0 16px;padding-left:22px}.policy li{margin-bottom:6px}
+.policy strong{color:var(--foreground)}.policy a{color:var(--primary);text-decoration:underline;text-underline-offset:3px;word-break:break-word}
+@media (max-width:1060px){.policy-layout{grid-template-columns:1fr}.policy-toc{display:none}}
