@@ -5,4 +5,5 @@
 - [x] How it works, About, Resources and demo/contact pages
 - [x] Verify navigation, interactions and mobile layouts
 - [x] Qonfirm 60-second overview video on the homepage and Qonfirm page
+- [x] Qashivo overview video on the homepage and Qashivo page
 - [ ] Demo destination and approved legal/commercial details (awaiting supplied content)

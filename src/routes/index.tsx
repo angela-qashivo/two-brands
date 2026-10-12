@@ -36,7 +36,7 @@ function Index() {
           <h2>Credit control that keeps working when you don’t.</h2>
           <p className="section-copy">Qashivo connects to your ledger, automates follow-up across email, SMS and AI voice, captures payment intent and surfaces the accounts that need human attention.</p>
           <Benefits items={[[Send, 'Automate follow-up'], [Target, 'Capture payment intent'], [AlertCircle, 'Focus on exceptions'], [Eye, 'Improve cash visibility']]} />
-          <ProductLink product="qashivo" label="See Qashivo for SMEs" />
+          <div className="home-ctas"><ProductLink product="qashivo" label="See Qashivo for SMEs" /><OverviewVideo product="qashivo" /></div>
         </div>
         <div className="home-dash"><MiniDashboard product="qashivo" /></div>
       </div>
