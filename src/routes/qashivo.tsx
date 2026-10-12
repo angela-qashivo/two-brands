@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router';
 import { Site, PageHero, WorkflowSection, HumanSection, Channels, DashboardSection, pageHead } from '@/components/site';
+import { OverviewVideo } from '@/components/overview-video';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 export const Route=createFileRoute('/qashivo')({head:()=>pageHead('Qashivo for SMEs | AI-powered credit control','Get paid without spending your day chasing. Automated email, SMS and AI voice, payment intent and cash visibility for SMEs.'),component:Page});
