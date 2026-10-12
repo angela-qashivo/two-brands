@@ -49,7 +49,7 @@ function Index() {
           <h2>Independent debt verification. Run end to end.</h2>
           <p className="section-copy">Qonfirm gives lenders controlled verification, independent auditor contact, AI follow-up and structured client and portfolio reporting.</p>
           <Benefits items={[[ShieldCheck, 'Verify on demand'], [FileCheck, 'Independent evidence'], [Radar, 'Earlier fraud signals'], [LayoutGrid, 'One portfolio view']]} />
-          <div className="home-ctas"><ProductLink product="qonfirm" label="Explore Qonfirm" /><Link to="/qonfirm" className="secondary-cta"><Play /> Watch the 60-second overview</Link></div>
+          <div className="home-ctas"><ProductLink product="qonfirm" label="Explore Qonfirm" /><OverviewVideo /></div>
         </div>
       </div>
     </section>
