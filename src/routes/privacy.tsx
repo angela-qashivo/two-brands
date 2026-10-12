@@ -1,4 +1,2 @@
-import {createFileRoute} from '@tanstack/react-router';
-import {Site,PageHero,pageHead} from '@/components/site';
-export const Route=createFileRoute('/privacy')({head:()=>pageHead('Privacy information','Privacy information for the Qashivo website by Nexus KPI Limited.'),component:Page});
-function Page(){return <Site><PageHero eyebrow="Legal" title="Privacy information" copy="Nexus KPI Limited, trading as Qashivo."/><section className="section"><div className="container"><h2>Policy awaiting publication</h2><p className="section-copy">The approved privacy policy has not yet been provided. The enquiry preparation tool does not transmit or save your details; it lets you copy the text on your own device. This notice is not a substitute for the company’s full privacy policy.</p></div></section></Site>}
+import {createFileRoute,redirect} from '@tanstack/react-router';
+export const Route=createFileRoute('/privacy')({beforeLoad:()=>{throw redirect({to:'/privacy-policy'})}});
