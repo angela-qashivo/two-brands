@@ -1,80 +1,54 @@
 import { createFileRoute, Link } from '@tanstack/react-router';
-import { ArrowRight, Send, Target, AlertCircle, Eye, ShieldCheck, FileCheck, Radar, LayoutGrid } from 'lucide-react';
-import { OverviewVideo } from '@/components/overview-video';
-import { Site, ProductLabel, ProductLogo, ProductLink, MiniDashboard, pageHead } from '@/components/site';
+import { Send, MessageSquare, Eye, UserCheck } from 'lucide-react';
+import { Site, ProductHero, ProductLabel, Eyebrow, pageHead } from '@/components/site';
 import { Button } from '@/components/ui/button';
-import people from '@/assets/finance-team.jpg';
-import qashivoLogo from '@/assets/qashivo-logo-light.png';
-import qonfirmLogo from '@/assets/qonfirm-logo-light.png';
 
-export const Route = createFileRoute('/')({ head: () => pageHead('Smarter control over the money you’re owed', 'AI-powered credit control for SMEs. Independent debt verification for Invoice Finance. Choose Qashivo or Qonfirm.'), component: Index });
+export const Route = createFileRoute('/')({ head: () => pageHead('AI-powered credit control for SMEs', 'Get paid without the chase. Qashivo automates credit control through email, SMS and AI voice for SMEs.'), component: Index });
 
-const doors = [
-  { product: 'qashivo' as const, title: 'Get paid without spending your day chasing.', copy: 'Automate credit control, capture payment intent and see what needs attention.' },
-  { product: 'qonfirm' as const, title: 'Know what’s real.', copy: 'Independent verification, AI follow-up and portfolio-level visibility.' },
+const steps = [
+  ['Connect your ledger', 'Bring outstanding invoices into one credit-control workflow.'],
+  ['Automate follow-ups', 'Consistent email, SMS and AI voice contact.'],
+  ['Capture payment intent', 'Promises to pay, disputes and queries — recorded.'],
+  ['Track collections', 'See what is outstanding and what happens next.'],
 ];
-
-function Benefits({ items }: { items: [typeof Send, string][] }) {
-  return <div className="benefit-grid">{items.map(([Icon, label]) => <div className="benefit-card" key={label}><Icon /><span>{label}</span></div>)}</div>;
-}
+const benefits: [typeof Send, string, string][] = [
+  [Send, 'Less manual chasing', 'Routine follow-up runs without your team.'],
+  [MessageSquare, 'Consistent customer communication', 'The right message on the right channel.'],
+  [Eye, 'Better cashflow visibility', 'Outstanding, promised and collected in one view.'],
+  [UserCheck, 'Human oversight where needed', 'Exceptions are surfaced to the people responsible.'],
+];
 
 function Index() {
   return <Site>
-    <section className="hero">
-      <img className="hero-background" src={people} alt="" width={1920} height={1024} />
-      <div className="container hero-content">
-        <h1>Smarter control over<br />the money <span>you’re owed.</span></h1>
-        <p className="hero-copy">AI-powered credit control for SMEs. Independent debt verification for Invoice Finance.</p>
-        <div className="pathways">{doors.map(d => <Link to={d.product === 'qashivo' ? '/qashivo' : '/qonfirm'} key={d.product} className={`pathway door product-${d.product === 'qashivo' ? 'cyan' : 'green'}`}><div className="pathway-top"><ProductLabel product={d.product} /><ProductLogo product={d.product} /><h2>{d.title}</h2><p>{d.copy}</p><span className="product-cta">Explore {d.product === 'qashivo' ? 'Qashivo' : 'Qonfirm'}<ArrowRight /></span></div></Link>)}</div>
+    <ProductHero product="qashivo" label="FOR SMEs" title="Get paid without the chase." copy="Qashivo automates credit control through email, SMS and AI voice, helping SMEs get paid, reduce manual chasing and improve cashflow visibility." cta="Book a Demo" />
+
+    <section className="section product-cyan">
+      <div className="container">
+        <Eyebrow>How Qashivo works</Eyebrow>
+        <h2>Four steps from invoice to cash.</h2>
+        <div className="step-row">{steps.map(([t, c], i) => <div className="step-card" key={t}><span className="step-number">0{i + 1}</span><h3>{t}</h3><p>{c}</p></div>)}</div>
+        <div className="mt-8"><Link to="/how-it-works" className="product-cta">See how it works →</Link></div>
       </div>
     </section>
 
     <section className="section product-cyan">
-      <div className="container split-section">
-        <div>
-          <ProductLabel product="qashivo" />
-          <h2>Credit control that keeps working when you don’t.</h2>
-          <p className="section-copy">Qashivo connects to your ledger, automates follow-up across email, SMS and AI voice, captures payment intent and surfaces the accounts that need human attention.</p>
-          <Benefits items={[[Send, 'Automate follow-up'], [Target, 'Capture payment intent'], [AlertCircle, 'Focus on exceptions'], [Eye, 'Improve cash visibility']]} />
-          <div className="home-ctas"><ProductLink product="qashivo" label="See Qashivo for SMEs" /><OverviewVideo product="qashivo" /></div>
-        </div>
-        <div className="home-dash"><MiniDashboard product="qashivo" /></div>
+      <div className="container">
+        <Eyebrow>Why Qashivo</Eyebrow>
+        <h2>Credit control that keeps working.</h2>
+        <div className="benefit-grid">{benefits.map(([Icon, t, c]) => <div className="benefit-card" key={t}><Icon /><span><strong>{t}</strong><br /><small className="text-muted-foreground">{c}</small></span></div>)}</div>
       </div>
     </section>
 
     <section className="section product-green">
       <div className="container split-section">
-        <div className="home-dash"><MiniDashboard product="qonfirm" /></div>
         <div>
           <ProductLabel product="qonfirm" />
-          <h2>Independent debt verification. Run end to end.</h2>
-          <p className="section-copy">Qonfirm gives lenders controlled verification, independent auditor contact, AI follow-up and structured client and portfolio reporting.</p>
-          <Benefits items={[[ShieldCheck, 'Verify on demand'], [FileCheck, 'Independent evidence'], [Radar, 'Earlier fraud signals'], [LayoutGrid, 'One portfolio view']]} />
-          <div className="home-ctas"><ProductLink product="qonfirm" label="Explore Qonfirm" /><OverviewVideo /></div>
+          <h2>Looking for independent debt verification?</h2>
         </div>
-      </div>
-    </section>
-
-    <section className="section">
-      <div className="container section-heading">
-        <h2>Two products. One technology foundation.</h2>
-        <p className="section-copy">Qashivo helps SMEs manage the money they are owed. Qonfirm helps Invoice Finance providers verify the debt behind their facilities.</p>
-        <div className="logo-link">
-          <div className="product-cyan"><img src={qashivoLogo} alt="Qashivo" /><small>For SMEs</small></div>
-          <span className="logo-line" aria-hidden="true" />
-          <div className="product-green"><img src={qonfirmLogo} alt="Qonfirm" /><small>For Invoice Finance</small></div>
+        <div>
+          <p className="section-copy">Qonfirm gives Invoice Finance providers lender-controlled verification, independent debtor contact, AI follow-up and structured portfolio reporting.</p>
+          <div className="mt-7"><Button variant="green" asChild><Link to="/qonfirm">Explore Qonfirm →</Link></Button></div>
         </div>
-      </div>
-    </section>
-
-    <section className="section final-cta">
-      <div className="container section-heading">
-        <h2>Choose the product built for you.</h2>
-        <div className="final-buttons">
-          <Button variant="cyan" size="lg" asChild><Link to="/qashivo">I’m an SME <ArrowRight /></Link></Button>
-          <Button variant="green" size="lg" asChild><Link to="/qonfirm">I’m an Invoice Finance provider <ArrowRight /></Link></Button>
-        </div>
-        <Link to="/demo" className="demo-link">Book a Demo ↗</Link>
       </div>
     </section>
   </Site>;

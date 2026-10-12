@@ -52,7 +52,7 @@ export function OverviewVideo({ variant = 'link', product = 'qonfirm' }: { varia
       {playing
         ? <video src={p.video} poster={p.poster} controls autoPlay playsInline preload="metadata" />
         : <button type="button" className="video-tile-cover" onClick={() => setPlaying(true)}>
-          <img src={p.poster} alt={p.alt} width={1920} height={1080} loading="lazy" />
+          <img src={p.poster} alt={p.alt} width={1920} height={1080} />
           <span className="video-tile-veil"><span className="video-play"><Play /></span>Play the overview</span>
         </button>}
       <div className="video-tile-meta"><span>{p.duration}</span><span>{p.caption}</span></div>

@@ -6,4 +6,6 @@
 - [x] Verify navigation, interactions and mobile layouts
 - [x] Qonfirm 60-second overview video on the homepage and Qonfirm page
 - [x] Qashivo overview video on the homepage and Qashivo page
-- [ ] Demo destination and approved legal/commercial details (awaiting supplied content)
+- [x] Qashivo-led homepage, Qonfirm hero, nav, supporting pages
+- [x] Working enquiry/demo form saving to Cloud
+- [ ] Approved legal text, leadership details, brochures (awaiting content)

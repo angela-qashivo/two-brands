@@ -12,5 +12,5 @@
 ## Website architecture
 - Keep product audience data in `src/lib/products.ts` and reusable presentation in `src/components/site.tsx` so audience separation is consistent across all pages.
 - Use separate TanStack content routes with leaf head metadata and a shared Site shell so every navigation destination is independently accessible.
-- Keep demo enquiry preparation client-only until a real booking or delivery destination is supplied; never imply the enquiry was sent.
+- Store demo and contact enquiries in the Cloud `enquiries` table (anonymous insert-only, no public reads) so every submission has a real destination.
 - Use transparent logo assets with light-lettering derivatives for dark surfaces and a square brand-derived favicon to retain readability without backgrounds.
