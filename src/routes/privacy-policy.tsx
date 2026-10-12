@@ -36,7 +36,7 @@ function render(md:string){
   });
 }
 
-const sections=[...policy.matchAll(/^## (.+)$/gm)].map(m=>m[1].trim());
+const sections=[...policy.matchAll(/^## (.+)$/gm)].map(m=>(m[1]??"").trim());
 
 function Page(){return <Site>
   <PageHero eyebrow="Legal" title="Privacy Policy" copy="Nexus KPI Limited, trading as Qashivo."/>
