@@ -15,6 +15,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DemoRouteImport } from './routes/demo'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as QashivoRouteImport } from './routes/qashivo'
 import { Route as QonfirmRouteImport } from './routes/qonfirm'
 import { Route as ResourcesRouteImport } from './routes/resources'
@@ -50,6 +51,11 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const QashivoRoute = QashivoRouteImport.update({
   id: '/qashivo',
   path: '/qashivo',
@@ -78,6 +84,7 @@ export interface FileRoutesByFullPath {
   '/demo': typeof DemoRoute
   '/how-it-works': typeof HowItWorksRoute
   '/privacy': typeof PrivacyRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/qashivo': typeof QashivoRoute
   '/qonfirm': typeof QonfirmRoute
   '/resources': typeof ResourcesRoute
@@ -90,6 +97,7 @@ export interface FileRoutesByTo {
   '/demo': typeof DemoRoute
   '/how-it-works': typeof HowItWorksRoute
   '/privacy': typeof PrivacyRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/qashivo': typeof QashivoRoute
   '/qonfirm': typeof QonfirmRoute
   '/resources': typeof ResourcesRoute
@@ -103,6 +111,7 @@ export interface FileRoutesById {
   '/demo': typeof DemoRoute
   '/how-it-works': typeof HowItWorksRoute
   '/privacy': typeof PrivacyRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/qashivo': typeof QashivoRoute
   '/qonfirm': typeof QonfirmRoute
   '/resources': typeof ResourcesRoute
@@ -117,6 +126,7 @@ export interface FileRouteTypes {
     | '/demo'
     | '/how-it-works'
     | '/privacy'
+    | '/privacy-policy'
     | '/qashivo'
     | '/qonfirm'
     | '/resources'
@@ -129,6 +139,7 @@ export interface FileRouteTypes {
     | '/demo'
     | '/how-it-works'
     | '/privacy'
+    | '/privacy-policy'
     | '/qashivo'
     | '/qonfirm'
     | '/resources'
@@ -141,6 +152,7 @@ export interface FileRouteTypes {
     | '/demo'
     | '/how-it-works'
     | '/privacy'
+    | '/privacy-policy'
     | '/qashivo'
     | '/qonfirm'
     | '/resources'
@@ -154,6 +166,7 @@ export interface RootRouteChildren {
   DemoRoute: typeof DemoRoute
   HowItWorksRoute: typeof HowItWorksRoute
   PrivacyRoute: typeof PrivacyRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   QashivoRoute: typeof QashivoRoute
   QonfirmRoute: typeof QonfirmRoute
   ResourcesRoute: typeof ResourcesRoute
@@ -204,6 +217,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/qashivo': {
       id: '/qashivo'
       path: '/qashivo'
@@ -242,6 +262,7 @@ const rootRouteChildren: RootRouteChildren = {
   DemoRoute: DemoRoute,
   HowItWorksRoute: HowItWorksRoute,
   PrivacyRoute: PrivacyRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   QashivoRoute: QashivoRoute,
   QonfirmRoute: QonfirmRoute,
   ResourcesRoute: ResourcesRoute,
