@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router';
 import { Send, MessageSquare, Eye, UserCheck } from 'lucide-react';
-import { Site, ProductHero, ProductLabel, ProductLink, Eyebrow, pageHead } from '@/components/site';
+import { Site, ProductHero, ProductLabel, Eyebrow, pageHead } from '@/components/site';
 import { Button } from '@/components/ui/button';
 
 export const Route = createFileRoute('/')({ head: () => pageHead('AI-powered credit control for SMEs', 'Get paid without the chase. Qashivo automates credit control through email, SMS and AI voice for SMEs.'), component: Index });
@@ -27,7 +27,7 @@ function Index() {
         <Eyebrow>How Qashivo works</Eyebrow>
         <h2>Four steps from invoice to cash.</h2>
         <div className="step-row">{steps.map(([t, c], i) => <div className="step-card" key={t}><span className="step-number">0{i + 1}</span><h3>{t}</h3><p>{c}</p></div>)}</div>
-        <div className="mt-8"><ProductLink product="qashivo" label="See how it works" /></div>
+        <div className="mt-8"><Link to="/how-it-works" className="product-cta">See how it works →</Link></div>
       </div>
     </section>
 
