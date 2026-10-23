@@ -1,9 +1,9 @@
 import { Site, Eyebrow } from '@/components/site';
-import { MarketingHero, AudienceBenefits, ProductVisual, VisualSequence, AudienceVideo, DsoCalculator, Faqs, ClosingCta, ResourcePreview } from '@/components/marketing';
+import { MarketingHero, AudienceBenefits, ProductVisual, VisualSequence, AudienceVideo, DsoCalculator, Faqs, ClosingCta } from '@/components/marketing';
 
 export function BusinessPage() {
   return <Site>
-    <MarketingHero label="Qashivo for businesses" title="More control. Less administration." copy="Charlie supports your team with smarter collections and clearer cashflow, so you can focus on your business." />
+    <MarketingHero financeTeam label="Qashivo for businesses" title="More control. Less administration." copy="Charlie supports your team with smarter collections and clearer cashflow, so you can focus on your business." />
     <section className="section"><div className="container"><AudienceBenefits /><Eyebrow>Smarter collections</Eyebrow><h2>Every account. A clearer next step.</h2><ProductVisual /><h2 className="mt-12">Collect. Understand. Forecast.</h2><VisualSequence /></div></section>
     <AudienceVideo />
     <DsoCalculator />
@@ -14,7 +14,6 @@ export function BusinessPage() {
       ['Will it fit our accounting process?', 'Your accounting ledger is the starting point. We will discuss your system, connection requirements and workflow in a demonstration.'],
       ['Where can I find pricing?', 'Pricing is not yet published. Book a demo or contact us to discuss your business and communication requirements.'],
     ]} /></div></section>
-    <ResourcePreview />
     <ClosingCta />
   </Site>;
 }
