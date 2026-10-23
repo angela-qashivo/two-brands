@@ -1,0 +1,21 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { Site, Eyebrow, pageHead } from '@/components/site';
+import { MarketingHero, BenefitList, Faqs, ResourcePreview } from '@/components/marketing';
+import { EnquiryForm } from '@/components/enquiry-form';
+
+export const Route = createFileRoute('/for-accountants')({ head: () => pageHead('Qashivo for accountants & bookkeepers | Client cashflow support', 'Credit control for accountants and bookkeepers: support your clients with smarter collections, payment promise tracking and clearer cashflow forecasts.'), component: Page });
+
+function Page() {
+  return <Site>
+    <MarketingHero label="For accountants & bookkeepers" title="Help your clients take control of cashflow. Strengthen the support you provide." copy="Qashivo gives your clients smarter credit control and clearer cashflow forecasts, helping you deliver more proactive financial support." cta="Book a partner demo" partner />
+    <section className="section"><div className="container"><Eyebrow>Better service. Better client outcomes.</Eyebrow><h2>Stronger client relationships start with clearer information.</h2><p className="section-copy">Payment commitments and behaviour help bring cashflow pressures into focus, so conversations can move from what is overdue to what happens next. Charlie is an AI-powered credit control assistant who supports your clients’ existing teams.</p><div className="content-grid"><div className="content-item"><h3>For accounting firms</h3><p>Support more informed client conversations, identify potential cash gaps earlier and strengthen proactive financial planning.</p></div><div className="content-item"><h3>For bookkeeping practices</h3><p>Reduce repetitive credit control administration, track commitments and focus on the customer responses and exceptions that matter.</p></div><div className="content-item"><h3>For outsourced finance teams</h3><p>Support more clients without proportionately increasing manual workloads, while retaining oversight of relationships and decisions.</p></div></div><BenefitList items={['Help clients improve payment collection.', 'Gain better visibility of cashflow pressures.', 'Improve the quality of ongoing client services.', 'Work alongside existing accounting processes.']} /></div></section>
+    <section className="section"><div className="container"><Eyebrow>Alongside your accounting process</Eyebrow><h2>From ledger information to practical advice.</h2><p className="section-copy">Qashivo starts with the accounting ledger. Routine follow-ups, recorded payment promises and a cashflow outlook of up to 13 weeks help you support the businesses you know. Discuss your clients’ accounting systems and connection requirements in a partner demo.</p><h2 className="mt-12">Questions from accounting professionals.</h2><Faqs items={[
+      ['Does Charlie replace our team or our clients’ credit controllers?', 'No. Charlie supports routine credit control as an assistant. People retain responsibility for customer relationships, decisions and exceptions.'],
+      ['What can inform client cashflow conversations?', 'Customer payment commitments and historical behaviour inform expected incoming cash and help identify potential gaps. Forecasts are estimates, not guarantees.'],
+      ['Is there an accountant webinar I can attend?', 'You can register your interest through Resources. The date and event details have not yet been confirmed.'],
+      ['How do we explore a partnership?', 'Request a partner demo below. We will discuss your practice, clients and workflow requirements without assuming a particular commercial arrangement.'],
+    ]} /></div></section>
+    <ResourcePreview />
+    <section className="section" id="enquiry"><div className="container demo-layout"><div><Eyebrow>Let’s talk</Eyebrow><h2>Book a partner demo.</h2><p className="section-copy">Tell us about your practice and the clients you support.</p></div><EnquiryForm demo defaultType="General enquiry" initialMessage="I’m interested in a partner demo for accountants and bookkeepers." submitLabel="Request a partner demo" /></div></section>
+  </Site>;
+}

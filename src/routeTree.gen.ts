@@ -13,6 +13,9 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DemoRouteImport } from './routes/demo'
+import { Route as ForAccountantsRouteImport } from './routes/for-accountants'
+import { Route as ForBusinessesRouteImport } from './routes/for-businesses'
+import { Route as ForLendersRouteImport } from './routes/for-lenders'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
@@ -39,6 +42,21 @@ const ContactRoute = ContactRouteImport.update({
 const DemoRoute = DemoRouteImport.update({
   id: '/demo',
   path: '/demo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForAccountantsRoute = ForAccountantsRouteImport.update({
+  id: '/for-accountants',
+  path: '/for-accountants',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForBusinessesRoute = ForBusinessesRouteImport.update({
+  id: '/for-businesses',
+  path: '/for-businesses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForLendersRoute = ForLendersRouteImport.update({
+  id: '/for-lenders',
+  path: '/for-lenders',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HowItWorksRoute = HowItWorksRouteImport.update({
@@ -82,6 +100,9 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
+  '/for-accountants': typeof ForAccountantsRoute
+  '/for-businesses': typeof ForBusinessesRoute
+  '/for-lenders': typeof ForLendersRoute
   '/how-it-works': typeof HowItWorksRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -95,6 +116,9 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
+  '/for-accountants': typeof ForAccountantsRoute
+  '/for-businesses': typeof ForBusinessesRoute
+  '/for-lenders': typeof ForLendersRoute
   '/how-it-works': typeof HowItWorksRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -109,6 +133,9 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/demo': typeof DemoRoute
+  '/for-accountants': typeof ForAccountantsRoute
+  '/for-businesses': typeof ForBusinessesRoute
+  '/for-lenders': typeof ForLendersRoute
   '/how-it-works': typeof HowItWorksRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -124,6 +151,9 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/demo'
+    | '/for-accountants'
+    | '/for-businesses'
+    | '/for-lenders'
     | '/how-it-works'
     | '/privacy'
     | '/privacy-policy'
@@ -137,6 +167,9 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/demo'
+    | '/for-accountants'
+    | '/for-businesses'
+    | '/for-lenders'
     | '/how-it-works'
     | '/privacy'
     | '/privacy-policy'
@@ -150,6 +183,9 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/demo'
+    | '/for-accountants'
+    | '/for-businesses'
+    | '/for-lenders'
     | '/how-it-works'
     | '/privacy'
     | '/privacy-policy'
@@ -164,6 +200,9 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   DemoRoute: typeof DemoRoute
+  ForAccountantsRoute: typeof ForAccountantsRoute
+  ForBusinessesRoute: typeof ForBusinessesRoute
+  ForLendersRoute: typeof ForLendersRoute
   HowItWorksRoute: typeof HowItWorksRoute
   PrivacyRoute: typeof PrivacyRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
@@ -201,6 +240,27 @@ declare module '@tanstack/react-router' {
       path: '/demo'
       fullPath: '/demo'
       preLoaderRoute: typeof DemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-accountants': {
+      id: '/for-accountants'
+      path: '/for-accountants'
+      fullPath: '/for-accountants'
+      preLoaderRoute: typeof ForAccountantsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-businesses': {
+      id: '/for-businesses'
+      path: '/for-businesses'
+      fullPath: '/for-businesses'
+      preLoaderRoute: typeof ForBusinessesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-lenders': {
+      id: '/for-lenders'
+      path: '/for-lenders'
+      fullPath: '/for-lenders'
+      preLoaderRoute: typeof ForLendersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-it-works': {
@@ -260,6 +320,9 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   DemoRoute: DemoRoute,
+  ForAccountantsRoute: ForAccountantsRoute,
+  ForBusinessesRoute: ForBusinessesRoute,
+  ForLendersRoute: ForLendersRoute,
   HowItWorksRoute: HowItWorksRoute,
   PrivacyRoute: PrivacyRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
