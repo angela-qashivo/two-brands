@@ -1,4 +1,6 @@
 # Qashivo website
+- [ ] Visual-first homepage and audience pages with concise copy, authentic photography and approved product visuals
+- [ ] Verify redesigned navigation, videos, calculator and desktop/mobile layouts
 - [x] Transparent logos and favicon
 - [x] Shared premium design and two-door homepage
 - [x] Dedicated SME and Invoice Finance pages with interactive workflows
