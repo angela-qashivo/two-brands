@@ -8,7 +8,7 @@ export function EnquiryForm({ defaultType = 'Qashivo / SME credit control', demo
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
   const [error, setError] = useState('');
 
-  if (status === 'sent') return <div className="demo-form" role="status"><CircleCheck className="text-primary" /><h3 className="text-2xl">Thank you — your enquiry has been received.</h3><p className="section-copy">The Qashivo team will reply to the email address you provided.</p><Button variant="outline" onClick={() => setStatus('idle')}>Send another enquiry</Button></div>;
+  if (status === 'sent') return <div className="demo-form" role="status"><CircleCheck className="text-primary" /><h3 className="text-2xl">Thank you, your enquiry has been received.</h3><p className="section-copy">The Qashivo team will reply to the email address you provided.</p><Button variant="outline" onClick={() => setStatus('idle')}>Send another enquiry</Button></div>;
 
   return <form className="demo-form" onSubmit={async e => {
     e.preventDefault();

@@ -79,7 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Qashivo | Credit control & independent debt verification" },
-      { name: "description", content: "One technology ecosystem. AI-powered credit control for SMEs and independent debt verification for Invoice Finance." },
+      { name: "description", content: "One technology ecosystem. AI-powered credit control for SMEs and independent debt verification for invoice finance." },
       { property: "og:title", content: "Qashivo | Credit control & independent debt verification" },
       { property: "og:description", content: "Two clear applications. Better control over the money you’re owed." },
       { property: "og:type", content: "website" },
