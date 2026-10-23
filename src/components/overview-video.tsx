@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Play, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import qonfirmVideo from '@/assets/qonfirm-overview.mp4.asset.json';
 import qonfirmPoster from '@/assets/qonfirm-poster.jpg.asset.json';
 import qashivoVideo from '@/assets/qashivo-overview.mp4.asset.json';
@@ -26,7 +27,7 @@ const PRODUCTS = {
   },
 } satisfies Record<Product, { video: string; poster: string; label: string; alt: string; duration: string; caption: string }>;
 
-export function OverviewVideo({ variant = 'link', product = 'qonfirm' }: { variant?: 'link' | 'card'; product?: Product }) {
+export function OverviewVideo({ variant = 'link', product = 'qonfirm', label = 'Watch the overview' }: { variant?: 'link' | 'card'; product?: Product; label?: string }) {
   const p = PRODUCTS[product];
   const [open, setOpen] = useState(false);
   const [playing, setPlaying] = useState(false);
@@ -51,19 +52,19 @@ export function OverviewVideo({ variant = 'link', product = 'qonfirm' }: { varia
     return <div className={`video-tile product-${product === 'qashivo' ? 'cyan' : 'green'}`}>
       {playing
         ? <video src={p.video} poster={p.poster} controls autoPlay playsInline preload="metadata" />
-        : <button type="button" className="video-tile-cover" onClick={() => setPlaying(true)}>
+        : <Button variant="ghost" type="button" className="video-tile-cover" onClick={() => setPlaying(true)}>
           <img src={p.poster} alt={p.alt} width={1920} height={1080} />
           <span className="video-tile-veil"><span className="video-play"><Play /></span>Play the overview</span>
-        </button>}
+        </Button>}
       <div className="video-tile-meta"><span>{p.duration}</span><span>{p.caption}</span></div>
     </div>;
   }
 
   return <>
-    <button type="button" ref={triggerRef} className="secondary-cta video-trigger" onClick={() => setOpen(true)}><Play /> Watch the overview</button>
+    <Button variant="ghost" type="button" ref={triggerRef} className="secondary-cta video-trigger" onClick={() => setOpen(true)}><Play />{label}</Button>
     {open && <div className="video-modal" role="dialog" aria-modal="true" aria-label={p.label} onClick={e => { if (e.target === e.currentTarget) setOpen(false); }}>
       <div className="video-modal-frame">
-        <div className="video-modal-bar"><span>{p.label}</span><button type="button" ref={closeRef} className="video-close" onClick={() => setOpen(false)}>Close <X /></button></div>
+        <div className="video-modal-bar"><span>{p.label}</span><Button variant="ghost" type="button" ref={closeRef} className="video-close" onClick={() => setOpen(false)}>Close <X /></Button></div>
         <video src={p.video} poster={p.poster} controls autoPlay playsInline preload="metadata" />
       </div>
     </div>}
