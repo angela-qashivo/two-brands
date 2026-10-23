@@ -1,4 +1,5 @@
 # Qashivo website
+- [ ] Replace all solution page header images with new accounting photography and verify rendering
 - [x] Remove resource sections and promotion links across pages; change business header to finance team photography; verify pages
 - [x] Visual-first homepage and audience pages with concise copy, authentic photography and approved product visuals
 - [x] Verify redesigned navigation, video controls, calculator and desktop/mobile layouts
