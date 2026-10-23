@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Eyebrow } from '@/components/site';
 import { OverviewVideo } from '@/components/overview-video';
 import { FORECAST_WEEKS, workingCapitalReleased } from '@/lib/cashflow';
+import { solutionPhotos } from '@/lib/solution-photos';
 import teamPhoto from '@/assets/workplace-team.jpg.asset.json';
 import advicePhoto from '@/assets/workplace-advice.jpg.asset.json';
 import ownerPhoto from '@/assets/business-owner.jpg.asset.json';
@@ -16,8 +17,8 @@ export function BenefitList({ items }: { items: string[] }) {
   return <ul className="benefit-list">{items.map(item => <li key={item}><Check aria-hidden="true" />{item}</li>)}</ul>;
 }
 export function MarketingHero({ label, title, copy, cta = 'Book a demo', product = 'qashivo', partner = false, financeTeam = false }: { label: string; title: string; copy: string; cta?: string; product?: 'qashivo' | 'qonfirm'; partner?: boolean; financeTeam?: boolean }) {
-  const photo = partner || financeTeam ? teamPhoto : product === 'qonfirm' ? advicePhoto : ownerPhoto;
-  return <section className={`product-hero marketing-hero photo-hero product-${product === 'qonfirm' ? 'green' : 'cyan'}`}><img className="photo-hero-image" src={photo.url} alt={financeTeam ? 'Finance team working together at a laptop' : partner ? 'Accounting professionals working together' : product === 'qonfirm' ? 'Finance professionals reviewing figures together' : 'Business owner working at a laptop, from the Qashivo explainer'} width={1800} height={1000} fetchPriority="high" /><div className="container photo-hero-content"><Eyebrow>{label}</Eyebrow><h1>{title}</h1><p className="section-copy">{copy}</p><div className="page-actions"><Button asChild size="lg"><Link to={partner ? '/for-accountants' : product === 'qonfirm' ? '/for-lenders' : '/demo'} hash={partner || product === 'qonfirm' ? 'enquiry' : ''}>{cta}<ArrowRight /></Link></Button><OverviewVideo product={product} label="Watch the video" /></div><div className="hero-footnote"><span>{product === 'qonfirm' ? 'Qonfirm by Qashivo' : 'Your team, supported by Charlie'}</span><span>{product === 'qonfirm' ? 'Independent debt verification' : 'Smarter collections. Clearer cashflow.'}</span></div></div></section>;
+  const photo = partner ? solutionPhotos.accountants : financeTeam ? solutionPhotos.business : product === 'qonfirm' ? solutionPhotos.lenders : { url: ownerPhoto.url, alt: 'Business owner working at a laptop, from the Qashivo explainer' };
+  return <section className={`product-hero marketing-hero photo-hero product-${product === 'qonfirm' ? 'green' : 'cyan'}`}><img className="photo-hero-image" src={photo.url} alt={photo.alt} width={1800} height={1000} fetchPriority="high" /><div className="container photo-hero-content"><Eyebrow>{label}</Eyebrow><h1>{title}</h1><p className="section-copy">{copy}</p><div className="page-actions"><Button asChild size="lg"><Link to={partner ? '/for-accountants' : product === 'qonfirm' ? '/for-lenders' : '/demo'} hash={partner || product === 'qonfirm' ? 'enquiry' : ''}>{cta}<ArrowRight /></Link></Button><OverviewVideo product={product} label="Watch the video" /></div><div className="hero-footnote"><span>{product === 'qonfirm' ? 'Qonfirm by Qashivo' : 'Your team, supported by Charlie'}</span><span>{product === 'qonfirm' ? 'Independent debt verification' : 'Smarter collections. Clearer cashflow.'}</span></div></div></section>;
 }
 export function ProductVisual({ kind = 'collections' }: { kind?: 'collections' | 'forecast' | 'verification' }) {
  const asset = kind === 'forecast' ? forecastScreen : kind === 'verification' ? verificationScreen : collectionsScreen;
