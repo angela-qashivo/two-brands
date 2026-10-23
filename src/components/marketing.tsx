@@ -1,12 +1,10 @@
 import { Link } from '@tanstack/react-router';
 import { useId, useState } from 'react';
-import { ArrowRight, Building2, ChartNoAxesCombined, Check, ChevronRight, FileDown, Handshake, MessageSquare, ScanLine, ShieldCheck, Target } from 'lucide-react';
+import { ArrowRight, ChartNoAxesCombined, Check, FileDown, MessageSquare, ScanLine, ShieldCheck, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Eyebrow } from '@/components/site';
 import { OverviewVideo } from '@/components/overview-video';
 import { FORECAST_WEEKS, workingCapitalReleased } from '@/lib/cashflow';
-import collections from '@/assets/qashivo-collections.jpg.asset.json';
-import cashflow from '@/assets/qashivo-cashflow.jpg.asset.json';
 import teamPhoto from '@/assets/workplace-team.jpg.asset.json';
 import advicePhoto from '@/assets/workplace-advice.jpg.asset.json';
 import ownerPhoto from '@/assets/business-owner.jpg.asset.json';
@@ -54,7 +52,7 @@ export function AudienceBenefits({ lender = false, partner = false }: { lender?:
  const items = lender ? [[ShieldCheck,'Verify balances','Structured debtor confirmations.'],[ScanLine,'Capture evidence','Clear records of debtor responses.'],[ChartNoAxesCombined,'See your portfolio','Verification coverage and exceptions.']] as const : partner ? [[MessageSquare,'Better conversations','Payment insights inform client advice.'],[ChartNoAxesCombined,'Earlier visibility','Spot potential client cashflow gaps.'],[ShieldCheck,'Stronger support','Charlie assists your clients’ teams.']] as const : [[MessageSquare,'Less routine chasing','Consistent email, SMS and AI voice follow-ups.'],[Target,'Clearer priorities','Focus on customers who need you.'],[ChartNoAxesCombined,'More confidence','A cashflow outlook of up to 13 weeks.']] as const;
  return <div className="audience-benefits">{items.map(([Icon,title,copy]) => <div key={title}><Icon aria-hidden="true" /><h3>{title}</h3><p>{copy}</p></div>)}</div>;
 }
-export function AudienceVideo({ product = 'qashivo' }: { product?: 'qashivo' | 'qonfirm' }) { return <section className="section"><div className="container audience-video"><div><Eyebrow>See it in action</Eyebrow><h2>{product === 'qonfirm' ? 'From ledger to evidence.' : 'Meet Charlie.'}</h2><p className="section-copy">{product === 'qonfirm' ? 'Your approved Qonfirm overview.' : 'Your team stays in control. Charlie supports the routine.'}</p></div><OverviewVideo product={product} variant="card" /></div></section>; }
+export function AudienceVideo({ product = 'qashivo' }: { product?: 'qashivo' | 'qonfirm' }) { return <section className="section"><div className="container audience-video"><div><Eyebrow>See it in action</Eyebrow><h2>{product === 'qonfirm' ? 'From ledger to evidence.' : 'Meet Charlie.'}</h2><p className="section-copy">{product === 'qonfirm' ? 'Independent responses. Structured verification records.' : 'Your team stays in control. Charlie supports the routine.'}</p></div><OverviewVideo product={product} variant="card" /></div></section>; }
 export function DsoCalculator() {
   const id = useId();
   const [sales, setSales] = useState('1000000');
