@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { ArrowRight, CircleCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { supabase } from '@/integrations/supabase/client';
+import { Link } from '@tanstack/react-router';
 import { ENQUIRY_TYPES, validateEnquiry, type EnquiryType } from '@/lib/enquiry';
 
-export function EnquiryForm({ defaultType = 'Qashivo / SME credit control', demo = false }: { defaultType?: EnquiryType; demo?: boolean }) {
+export function EnquiryForm({ defaultType = 'Qashivo / SME credit control', demo = false, initialMessage = '', submitLabel }: { defaultType?: EnquiryType; demo?: boolean; initialMessage?: string; submitLabel?: string }) {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
   const [error, setError] = useState('');
 
@@ -25,9 +26,10 @@ export function EnquiryForm({ defaultType = 'Qashivo / SME credit control', demo
     <label>Company<input required name="company" maxLength={160} autoComplete="organization" placeholder="Company name" /></label>
     <label>Email<input required type="email" name="email" maxLength={254} autoComplete="email" placeholder="you@company.com" /></label>
     <label>Enquiry type<select name="enquiry_type" defaultValue={defaultType}>{ENQUIRY_TYPES.map(t => <option key={t}>{t}</option>)}</select></label>
-    <label>Message<textarea name="message" rows={4} maxLength={4000} placeholder="How can we help?" /></label>
+    <label>Message<textarea name="message" rows={4} maxLength={4000} placeholder="How can we help?" defaultValue={initialMessage} /></label>
     <label className="checkbox-row"><input type="checkbox" name="wants_demo" defaultChecked={demo} /> I’d like to book a demo</label>
     {error && <p className="form-error" role="alert">{error}</p>}
-    <Button type="submit" disabled={status === 'sending'}>{status === 'sending' ? 'Sending…' : demo ? 'Request a demo' : 'Send enquiry'} <ArrowRight /></Button>
+    <p className="notice">We’ll use these details to respond to your enquiry. Read our <Link to="/privacy-policy" className="product-cta">Privacy Policy</Link>.</p>
+    <Button type="submit" disabled={status === 'sending'}>{status === 'sending' ? 'Sending…' : submitLabel ?? (demo ? 'Request a demo' : 'Send enquiry')} <ArrowRight /></Button>
   </form>;
 }

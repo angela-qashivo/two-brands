@@ -1,0 +1,22 @@
+import { createFileRoute, Link } from '@tanstack/react-router';
+import { Site, Eyebrow, pageHead } from '@/components/site';
+import { MarketingHero, BenefitList, Faqs } from '@/components/marketing';
+import { EnquiryForm } from '@/components/enquiry-form';
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
+
+export const Route = createFileRoute('/for-lenders')({ head: () => pageHead('Invoice finance lender solutions | Qonfirm & Qashivo', 'Qonfirm debtor verification and Qashivo collections intelligence support invoice finance lenders with receivables confirmation, payment behaviour and portfolio visibility.'), component: Page });
+function Page() {
+  return <Site product="qonfirm">
+    <MarketingHero product="qonfirm" label="For invoice finance lenders" title="Greater confidence in receivables. Better visibility across your lending portfolio." copy="Qonfirm helps lenders streamline debtor verification, while Qashivo’s payment intelligence can support more efficient collections and earlier identification of emerging risks." cta="Book a lender demo" />
+    <section className="section"><div className="container"><Eyebrow>Solution A · Qonfirm by Qashivo</Eyebrow><h2>Debt verification. A clearer record of receivables.</h2><p className="section-copy">A lender-controlled verification workflow captures structured debtor balance confirmations and brings verification records together for onboarding and ongoing facility monitoring.</p><BenefitList items={['Verify outstanding debtor balances.', 'Capture structured debtor responses.', 'Reduce manual verification administration.', 'Support onboarding and ongoing facility monitoring.', 'Maintain visibility of funded receivables.']} /><p className="notice">Qonfirm supports lender due diligence and verification processes. It is not an audit service and does not replace independent audit procedures.</p><div className="mt-6"><Button asChild><Link to="/qonfirm">Explore Qonfirm debt verification <ArrowRight /></Link></Button></div></div></section>
+    <section className="section"><div className="container"><Eyebrow>Solution B · Qashivo collections intelligence</Eyebrow><h2>Understand payment behaviour. Focus collection activity.</h2><p className="section-copy">For lenders operating collections or factoring services, Qashivo’s payment intelligence can support more informed portfolio management. Charlie is an AI-powered credit control assistant, working alongside people rather than replacing their judgement.</p><BenefitList items={['Improve operational efficiency and reduce repetitive collection tasks.', 'Understand debtor payment behaviour.', 'Track payment commitments and exceptions.', 'Support more informed portfolio management.']} /><p className="notice">Collections intelligence is distinct from Qonfirm’s debtor verification workflow. Discuss the requirements of your lending operation with our team.</p></div></section>
+    <section className="section"><div className="container"><h2>Your lender questions.</h2><Faqs items={[
+      ['Is Qonfirm an audit service?', 'No. Qonfirm is a debtor verification solution. Its records support lender reviews and due diligence; they do not replace independent audit procedures.'],
+      ['Who controls the verification scope?', 'The lender selects the clients, debtors and invoices. Requests are issued independently and responses are categorised into verification records.'],
+      ['Are collections intelligence and Qonfirm the same solution?', 'No. Qonfirm focuses on debtor balance verification. Qashivo collections intelligence supports payment follow-ups, behavioural understanding, commitments and exceptions.'],
+      ['Where can we find lender pricing?', 'No lender pricing is published. Contact our partnerships team to discuss verification scope, reporting and your operational requirements.'],
+    ]} /></div></section>
+    <section className="section" id="enquiry"><div className="container demo-layout"><div><Eyebrow>Partnerships</Eyebrow><h2>Book a lender demo.</h2><p className="section-copy">Tell our partnerships team about your portfolio, verification workflow or collection operation.</p><Link to="/contact" className="product-cta mt-6">Contact our partnerships team <ArrowRight /></Link></div><EnquiryForm demo defaultType="Qonfirm / Invoice Finance" initialMessage="I’m interested in a lender demo and discussing our verification or collections requirements." submitLabel="Request a lender demo" /></div></section>
+  </Site>;
+}
