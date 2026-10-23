@@ -8,4 +8,10 @@
 - [x] Qashivo overview video on the homepage and Qashivo page
 - [x] Qashivo-led homepage, Qonfirm hero, nav, supporting pages
 - [x] Working enquiry/demo form saving to Cloud
-- [ ] Approved legal text, leadership details, brochures (awaiting content)
+- [ ] Update homepage, Charlie positioning, two product pillars and audience navigation
+- [ ] Business, accountant/bookkeeper and lender audience pages
+- [ ] Prepare resource drafts, webinar interest and public video library
+- [ ] Add and verify working capital calculator and audience flows
+- [ ] The Cash Gap PDF, webinar details and approved educational material (awaiting content)
+- [ ] Confirm whether Angela should return to the approved team (brief conflicts with earlier removal)
+- [ ] Private Help Centre, tutorials, pricing and future finance products (future work, not for launch)
