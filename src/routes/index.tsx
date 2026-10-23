@@ -8,7 +8,7 @@ export const Route = createFileRoute('/')({ head: () => pageHead('AI-powered cre
 const steps = [
   ['Connect your ledger', 'Bring outstanding invoices into one credit-control workflow.'],
   ['Automate follow-ups', 'Consistent email, SMS and AI voice contact.'],
-  ['Capture payment intent', 'Promises to pay, disputes and queries — recorded.'],
+  ['Capture payment intent', 'Payment dates, disputes and queries, all recorded.'],
   ['Track collections', 'See what is outstanding and what happens next.'],
 ];
 const benefits: [typeof Send, string, string][] = [
@@ -20,7 +20,7 @@ const benefits: [typeof Send, string, string][] = [
 
 function Index() {
   return <Site>
-    <ProductHero product="qashivo" label="FOR SMEs" title="Get paid without the chase." copy="Qashivo automates credit control through email, SMS and AI voice, helping SMEs get paid, reduce manual chasing and improve cashflow visibility." cta="Book a Demo" />
+    <ProductHero product="qashivo" label="FOR SMEs" title="Get paid without the chase." copy="Qashivo automates credit control through email, SMS and AI voice, helping SMEs get paid, reduce manual chasing and improve cashflow visibility." cta="Book a demo" />
 
     <section className="section product-cyan">
       <div className="container">
@@ -46,7 +46,7 @@ function Index() {
           <h2>Looking for independent debt verification?</h2>
         </div>
         <div>
-          <p className="section-copy">Qonfirm gives Invoice Finance providers lender-controlled verification, independent debtor contact, AI follow-up and structured portfolio reporting.</p>
+          <p className="section-copy">Qonfirm gives invoice finance providers lender-controlled verification, independent debtor contact, AI follow-up and structured portfolio reporting.</p>
           <div className="mt-7"><Button variant="green" asChild><Link to="/qonfirm">Explore Qonfirm →</Link></Button></div>
         </div>
       </div>

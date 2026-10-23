@@ -1,10 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Site, ProductHero, WorkflowSection, Problems, Evidence, DashboardSection, pageHead } from '@/components/site';
 import { EnquiryForm } from '@/components/enquiry-form';
-export const Route=createFileRoute('/qonfirm')({head:()=>pageHead('Qonfirm | Independent debt verification','Independent debt verification for Invoice Finance lenders: controlled verification, AI-powered follow-up and portfolio-level reporting.'),component:Page});
+export const Route=createFileRoute('/qonfirm')({head:()=>pageHead('Independent debt verification | Qonfirm by Qashivo','Independent debt verification for invoice finance lenders: controlled verification, AI-powered follow-up and portfolio-level reporting.'),component:Page});
 const grid=(items:string[][])=><div className="content-grid">{items.map(([title,copy])=><div className="content-item" key={title}><h3>{title}</h3><p>{copy}</p></div>)}</div>;
-function Page(){return <Site>
- <ProductHero product="qonfirm" label="FOR INVOICE FINANCE" title="Know what’s real." copy="Qonfirm provides independent debt verification for Invoice Finance lenders, combining controlled verification, AI-powered follow-up and portfolio-level reporting." cta="Discuss a Pilot"/>
+function Page(){return <Site product="qonfirm">
+ <ProductHero product="qonfirm" label="FOR INVOICE FINANCE" title="Know what’s real." copy="Qonfirm provides independent debt verification for invoice finance lenders, combining controlled verification, AI-powered follow-up and portfolio-level reporting." cta="Discuss a pilot"/>
  <Problems/>
  <WorkflowSection product="qonfirm"/>
  <Evidence/>

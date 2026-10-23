@@ -14,3 +14,4 @@
 - Use separate TanStack content routes with leaf head metadata and a shared Site shell so every navigation destination is independently accessible.
 - Store demo and contact enquiries in the Cloud `enquiries` table (anonymous insert-only, no public reads) so every submission has a real destination.
 - Use transparent logo assets with light-lettering derivatives for dark surfaces and a square brand-derived favicon to retain readability without backgrounds.
+- Theme via CSS tokens: Paper is the default ground; hero, header, footer and closing bands get Night tokens by selector; per-product signal comes from `--product`/`--product-ink` set by `.product-cyan`/`.product-green` (Site takes a `product` prop), so components never hardcode a product colour.
