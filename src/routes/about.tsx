@@ -1,6 +1,5 @@
 import {createFileRoute,Link} from '@tanstack/react-router';
-import {useState} from 'react';
-import {ArrowRight,CircleCheck,Play} from 'lucide-react';
+import {ArrowRight,CircleCheck} from 'lucide-react';
 import {Site,MiniDashboard,ProductLabel,ProductLink,pageHead} from '@/components/site';
 import {Button} from '@/components/ui/button';
 import people from '@/assets/finance-team.jpg';
@@ -9,8 +8,6 @@ import kramerPhoto from '@/assets/team-simon-kramer.jpg.asset.json';
 import coePhoto from '@/assets/team-michael-coe.jpg.asset.json';
 import carterPhoto from '@/assets/team-jamie-carter.jpg.asset.json';
 import dodsworthPhoto from '@/assets/team-john-dodsworth.jpg.asset.json';
-import whyVideo from '@/assets/qashivo-why.mp4.asset.json';
-import whyPoster from '@/assets/qashivo-why-poster.jpg.asset.json';
 export const Route=createFileRoute('/about')({head:()=>pageHead('About Qashivo | The team behind smarter collections','Meet the Qashivo team supporting SME finance teams with smarter credit control, clearer cashflow forecasting and Qonfirm debt verification for invoice finance.'),component:Page});
 const team:[string,string,string,string][]=[['Simon Kramer','Founder & CEO','Simon has spent more than 30 years helping SMEs navigate growth, cashflow and financial challenges. Through firsthand experience of the impact late payments have on businesses, he founded Qashivo to help companies get paid faster and improve cashflow visibility.',kramerPhoto.url],['Michael Coe','Chief Technology Officer','Michael has more than 30 years of experience building complex technology platforms and financial systems. He combines deep expertise in software architecture, fintech infrastructure and AI to ensure Qashivo is secure, scalable and built for growth.',coePhoto.url],['Jamie Carter','Chief Marketing Officer','Jamie brings more than 25 years of experience in marketing, growth and commercial strategy. He has helped businesses build strong brands, generate demand and scale customer acquisition.',carterPhoto.url],['John Dodsworth','Head of Partnerships','John brings 25+ years of invoice finance experience and an extensive network across lenders and business finance. He leads Qashivo’s strategic partnerships and finance ecosystem.',dodsworthPhoto.url]];
 const cards=[{p:'qashivo' as const,h:'Smarter credit control. Clearer cashflow.',c:'Charlie, an AI-powered credit control assistant, supports routine follow-ups, captures payment commitments and connects payment behaviour to cashflow forecasting.',b:['Automated credit-control communication','Less manual chasing','Cashflow forecasts of up to 13 weeks','More time to focus on growing the business']},{p:'qonfirm' as const,h:'Independent debt verification. Run end to end.',c:'Built for the invoice finance marketplace: lender-controlled verification, independent debtor contact, AI-powered follow-up and structured reporting.',b:['Independent debt verification','AI-powered debtor follow-up','Structured evidence and reporting','Clearer portfolio-level risk visibility']}];
